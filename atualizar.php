@@ -15,8 +15,8 @@ $situacao = situacaoAluno($resultadoMedia);
 /* Verificar se o formulário foi acionado */
 if( isset($_POST['atualizar']) ){
     $nomeDoAluno = filter_input(INPUT_POST, "nome_aluno", FILTER_SANITIZE_SPECIAL_CHARS);
-    $nota1 = filter_input(INPUT_POST, "nota2", FILTER_SANITIZE_NUMBER_FLOAT);
-    $nota2 = filter_input(INPUT_POST, "nota1", FILTER_SANITIZE_NUMBER_FLOAT);
+    $nota1 = filter_input(INPUT_POST, "nota2", FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+    $nota2 = filter_input(INPUT_POST, "nota1", FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
     atualizarAluno($conexao, $nomeDoAluno, $nota1, $nota2, $id);
     
     header("location:visualizar.php?status=sucesso");

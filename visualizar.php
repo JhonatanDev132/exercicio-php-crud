@@ -48,12 +48,16 @@ as páginas de atualização e exclusão. -->
         <td> <?= $aluno["nome_aluno"] ?> </td>
         <td> <?= $aluno["nota1"] ?> </td>
         <td> <?= $aluno["nota2"] ?> </td>
+        
         <?php
         $resultadoMedia = calcularMedia($aluno["nota1"], $aluno["nota2"]);
         $situacao = situacaoAluno($resultadoMedia);
         ?>
+
         <td> <?= $resultadoMedia ?> </td>
+
         <td> <?= $situacao ?> </td>
+
         <td>
             <a href="atualizar.php?id=<?= $aluno["id"] ?>">Editar</a>
             <a class="excluir" href="excluir.php?id=<?= $aluno["id"] ?>">Excluir</a>
@@ -63,7 +67,7 @@ as páginas de atualização e exclusão. -->
         </tbody>
     </table>
 
-    <script src="../js/confirma-exclusao.js"></script>
+    <script src="js/confirma-exclusao.js"></script>
 
     <p><a href="index.php">Voltar ao início</a></p>
 </div>
